@@ -77,3 +77,13 @@ RecipeService.addRecipe(recipe).then(() => {
     alert("Oh, Snap! Recipe was not updated, something went wrong!")
 });
 
+References:
+https://react.dev/
+https://github.com/axios/axios
+https://axios-http.com/docs/intro
+https://getbootstrap.com/docs/4.1/getting-started/introduction/
+https://nodejs.org/
+https://www.youtube.com/watch?v=eVZcI7m8cKc
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+
