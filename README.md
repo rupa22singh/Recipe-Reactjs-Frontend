@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Recipe Management UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This React.js application serves as the frontend for a recipe management system. It allows users to view, add, update, and delete recipes through a clean and intuitive user interface. The frontend interacts with a Spring Boot backend via RESTful APIs.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **View Recipes**: Displays a list of all recipes with their details.
+- **Add a Recipe**: Allows users to create and submit new recipes.
+- **Update a Recipe**: Edit the details of an existing recipe.
+- **Delete a Recipe**: Remove a recipe from the list.
+- **Responsive Design**: Works on both desktop and mobile devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technology Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend**: React.js, Axios, Bootstrap
+- **State Management**: React hooks (`useState`, `useEffect`)
+- **HTTP Client**: Axios for API communication
+- **Styling**: Bootstrap for responsive design
 
-### `npm test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Node.js**: Ensure Node.js and npm are installed. You can download Node.js from [here](https://nodejs.org/).
+- **React.js**: The project uses React.js, which can be set up using `create-react-app`.
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone the Repository
+git clone https://github.com/rupa22singh/Recipe-Reactjs-Frontend.git
+cd Recipe-Reactjs-Frontend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. Install Dependencies
+    npm install
+### 3. Start the Applicaiton
+    npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+The React app will start on http://localhost:3000.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+API Integration
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The React application integrates with the backend Spring Boot API. Ensure the backend is running on http://localhost:8080 or adjust the API base URL accordingly.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+API Endpoints
+GET /v1/recipes/allrecipes: Fetch all recipes.
+GET /v1/recipes: Fetch all recipes page wise
+POST /v1/recipes: Add a new recipe.
+PUT /v1/recipes/{id}: Update a recipe.
+DELETE /v1/recipes/{id}: Delete a recipe.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The project's structure follows the typical React.js file layout:
 
-## Learn More
+src/
+├── components/      # React components
+│   ├── ViewRecipe.js    # Component to view all recipes
+│   ├── AddRecipe.js     # Component to add a new recipe
+│   └── UpdateRecipe.js  # Component to update existing recipe
+├── service/         # Axios service for API requests
+│   └── RecipeService.js
+├── App.js           # Main application file
+└── index.js         # Entry point for the application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To add a new recipe, the form requires fields for:
 
-### Code Splitting
+Recipe Name
+Ingredients (as a list of strings)
+Instructions
+Servings
+Type (Vegetarian/Non-Vegetarian)
+Example POST request using Axios:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+RecipeService.addRecipe(recipe).then(() => {
+    alert("The recipe has been added successfully.");
+}, () => {
+    alert("Oh, Snap! Recipe was not updated, something went wrong!")
+});
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
